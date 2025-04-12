@@ -5,10 +5,10 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { giftCards } from "@/data/gift-cards";
 import GiftCardItem from "@/components/GiftCardItem";
-import { useCartStore } from "@/lib/cart";
+import { useCart } from "@/lib/cart";
 
 const HomePage = () => {
-  const addItem = useCartStore((state) => state.addItem);
+  const { addItem } = useCart();
 
   const handleAddToCart = (id: string) => {
     const card = giftCards.find((card) => card.id === id);

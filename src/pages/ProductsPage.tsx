@@ -2,10 +2,10 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { giftCards } from "@/data/gift-cards";
 import GiftCardItem from "@/components/GiftCardItem";
-import { useCartStore } from "@/lib/cart";
+import { useCart } from "@/lib/cart";
 
 const ProductsPage = () => {
-  const addItem = useCartStore((state) => state.addItem);
+  const { addItem } = useCart();
 
   const handleAddToCart = (id: string) => {
     const card = giftCards.find((card) => card.id === id);
